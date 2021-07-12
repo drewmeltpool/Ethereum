@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #0e1629;
+  padding: 15px 0;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__list {
+  display: flex;
+}
+
+.navbar__item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.navbar__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo__inner {
+  display: flex;
+  align-items: center;
+}

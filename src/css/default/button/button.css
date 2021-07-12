@@ -1,0 +1,21 @@
+.btn {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn--default {
+  padding: 10px 45px;
+  border-radius: 50px;
+  background: repeat padding-box border-box 0% 0% / auto auto scroll
+      linear-gradient(
+        180deg,
+        rgba(36, 51, 145, 0.15) 0%,
+        rgba(87, 29, 127, 0) 100%
+      ),
+    #8015e8;
+}
