@@ -68,10 +68,10 @@
 }
 
 .onetime {
-    border: 1px solid rgba(84, 97, 125, 0.9);
     grid-area: onetime;
     margin: 0 !important;
     background-color: #162341;
+    border-radius: 15px;
 }
 .example_description{
     padding-top: 15px;
