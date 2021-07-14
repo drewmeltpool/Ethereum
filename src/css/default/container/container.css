@@ -5,7 +5,10 @@
 }
 
 .row {
+  display: flex;
+  flex-direction: column;
 }
 
 .column {
+  display: flex;
 }

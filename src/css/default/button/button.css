@@ -6,10 +6,11 @@
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn--default {
-  padding: 10px 45px;
+  padding: 7px 45px;
   border-radius: 50px;
   background: repeat padding-box border-box 0% 0% / auto auto scroll
       linear-gradient(
@@ -18,4 +19,10 @@
         rgba(87, 29, 127, 0) 100%
       ),
     #8015e8;
+}
+
+.btn--outline {
+  padding: 7px 45px;
+  border-radius: 24px;
+  border: 1px solid #fff;
 }

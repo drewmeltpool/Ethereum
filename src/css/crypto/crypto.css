@@ -1,0 +1,13 @@
+.crypto__list {
+  padding: 15px;
+  border: 2px solid #fff;
+  border-radius: 40px;
+}
+
+.crypto__list > .crypto__item:not(:last-child) {
+  border-bottom: 2px solid #dbdbdb;
+}
+
+.crypto__item {
+  /* display: flex; */
+}
