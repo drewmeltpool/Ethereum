@@ -6,3 +6,5 @@
 @import './cards/cards.css';
 @import './speaker/speaker.css';
 @import './crypto/crypto.css';
+@import 'giveaway/giveaway.css';
+@import 'progress-bar/progress-bar.css';
