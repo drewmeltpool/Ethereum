@@ -4,3 +4,5 @@
 @import './header/header.css';
 @import './header/navbar.css';
 @import './cards/cards.css';
+@import 'giveaway/giveaway.css';
+@import 'progress-bar/progress-bar.css';

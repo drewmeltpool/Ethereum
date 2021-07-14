@@ -25,7 +25,9 @@
 }
 .bonus_link{
     text-decoration: none;
-    color: #8015E8;
+    color: #f0f0f0;
+    background-color: #8015E8;
+    width: 50px;
     padding: 10px;
     border-radius: 30px;
     font-weight: 700;
