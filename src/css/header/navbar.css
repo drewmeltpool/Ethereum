@@ -22,7 +22,16 @@
   text-decoration: none;
 }
 
+.navbar-item--join-mobile {
+  display: none;
+}
+
 .logo__inner {
   display: flex;
   align-items: center;
+}
+
+.logo__title {
+  font-size: 25px;
+  font-weight: bold;
 }

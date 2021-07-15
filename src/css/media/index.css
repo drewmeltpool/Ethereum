@@ -1,0 +1,127 @@
+@media (max-width: 950px) {
+  .card:not(:nth-child(2)) {
+    margin: 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .navbar__list {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background-color: #0e1629;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+  }
+
+  .navbar__item {
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  .navbar__item:not(:last-child) {
+    margin: 0;
+  }
+
+  .navbar__list--active {
+    display: flex;
+  }
+
+  .navbar-item--join-mobile {
+    display: flex;
+  }
+
+  .navbar-item--join-pc {
+    display: none;
+  }
+
+  .card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .cards-wrapper {
+    display: block;
+  }
+
+  .cards_wrapper--grid {
+    display: block;
+  }
+
+  .header__content {
+    display: block;
+  }
+
+  .header__features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .crypto__list,
+  .capability__list,
+  .speaker__item {
+    position: static;
+    margin: 20px;
+  }
+
+  .faq__item:hover .faq__answer,
+  .faq__item:hover .faq__question {
+    opacity: 1;
+  }
+
+  .faq__answer {
+    position: static;
+    opacity: 1;
+    height: auto;
+  }
+
+  .faq__question {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 458px) {
+  .timer__block:not(:last-child):after {
+    font-size: 32px;
+    top: 25%;
+  }
+
+  .timer__text {
+    font-size: 28px;
+  }
+
+  .timer__name {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .qrcode-wrapper {
+    display: block;
+  }
+
+  .qrcode__img-wrapper {
+    padding: 20px 10px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer__list {
+    flex-direction: column;
+  }
+
+  .footer__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

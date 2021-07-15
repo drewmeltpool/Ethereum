@@ -1,0 +1,36 @@
+.time-wrapper {
+  width: 70%;
+}
+
+.timer {
+  background-color: #030713;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.timer__block {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.timer__block:not(:last-child):after {
+  content: ':';
+  font-size: 50px;
+  position: absolute;
+  top: 30%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.timer__text {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.timer__name {
+  font-size: 14px;
+  color: #727980;
+}

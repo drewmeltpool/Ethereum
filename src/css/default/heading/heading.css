@@ -1,4 +1,17 @@
+.heading {
+  color: inherit;
+}
+
 .heading--medium {
   font-size: 36px;
+  padding: 60px 0;
   font-weight: 700;
+}
+
+.heading--small {
+  font-weight: 700;
+}
+
+.heading--muddy {
+  color: #767674;
 }

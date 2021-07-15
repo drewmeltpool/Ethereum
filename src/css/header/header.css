@@ -1,3 +1,35 @@
 .header {
   background-color: #0e1629;
+  padding: 60px 0;
+}
+
+.header__content {
+  display: flex;
+}
+
+.header__bnt-wrapper .btn:not(:last-child) {
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.header__bnt-wrapper {
+  padding: 10px 0;
+}
+
+.header__text {
+  flex: 5;
+  padding: 110px 0;
+}
+
+.header__features {
+  flex: 3;
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
 }

@@ -1,0 +1,17 @@
+.capability__list {
+  position: absolute;
+  right: 135px;
+  top: 260px;
+  z-index: 1;
+  padding: 15px;
+  border: 1px solid #54617d;
+  border-radius: 30px;
+  background-color: #111b31;
+}
+
+.capability__item {
+  font-weight: normal;
+  color: #54617d;
+  font-weight: 700;
+  padding: 8px;
+}
