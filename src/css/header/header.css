@@ -33,3 +33,19 @@
   right: 0;
   z-index: 5;
 }
+.join__form-wrapper{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.join__form{
+  padding: 70px;
+  background-color: #1C2D52;
+  border-radius: 20px;
+  display: flex;
+flex-direction: column;
+}
+.join__form-title{
+  text-align: center;
+}
