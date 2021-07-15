@@ -52,7 +52,7 @@ const startTimer = (block, duration) => {
 
 const headerTimer = document.querySelector('#header__timer');
 
-const deadline = new Date('July 15, 2021 10:00:00');
+const deadline = new Date('July 16, 2021 10:00:00');
 
 const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 500,
