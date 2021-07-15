@@ -26,6 +26,11 @@
   display: none;
 }
 
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo__inner {
   display: flex;
   align-items: center;

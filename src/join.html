@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/index.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Ethereum</title>
-</head>
-<body>
-<header class="header" id="giveaway">
-    <nav class="navbar fixed">
+  </head>
+  <body>
+    <header class="header" id="giveaway">
+      <nav class="navbar fixed">
         <div class="navbar__inner container">
-            <div class="logo">
-                <div class="logo__inner">
-                    <img src="assets/logo.webp" alt="Ethereum" class="logo__image"/>
-                    <h1 class="logo__title">Ethereum</h1>
-                </div>
+          <a href="index.html" class="logo">
+            <div class="logo__inner">
+              <img src="assets/logo.webp" alt="Ethereum" class="logo__image" />
+              <h1 class="logo__title">Ethereum</h1>
             </div>
-            <button class="btn burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </button>
-            <ul class="navbar__list">
-                <li class="navbar__item">
-                    <a href="#giveaway" class="navbar__link">Giveaway</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#rules" class="navbar__link">Rules</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#bonus" class="navbar__link">Bonus</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#faq" class="navbar__link">FAQ</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#transaction" class="navbar__link">Transactions</a>
-                </li>
-                <li class="navbar__item navbar-item--join-mobile">
-                    <a href="#" class="btn btn--default">To join</a>
-                </li>
-            </ul>
-            <a href="#" class="btn btn--default navbar-item--join-pc">To join</a>
+          </a>
+          <button class="btn burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </button>
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <a href="index.html#giveaway" class="navbar__link">Giveaway</a>
+            </li>
+            <li class="navbar__item">
+              <a href="index.html#rules" class="navbar__link">Rules</a>
+            </li>
+            <li class="navbar__item">
+              <a href="index.html#bonus" class="navbar__link">Bonus</a>
+            </li>
+            <li class="navbar__item">
+              <a href="index.html#faq" class="navbar__link">FAQ</a>
+            </li>
+            <li class="navbar__item">
+              <a href="index.html#transaction" class="navbar__link"
+                >Transactions</a
+              >
+            </li>
+            <li class="navbar__item navbar-item--join-mobile">
+              <a href="#" class="btn btn--default">To join</a>
+            </li>
+          </ul>
+          <a href="#" class="btn btn--default navbar-item--join-pc">To join</a>
         </div>
-    </nav>
-    <div class="join-wrapper container">
+      </nav>
+      <div class="join-wrapper container">
         <div class="join__form-wrapper">
-            <div class="join__form">
-                <h3 class="join__form-title">Entrance</h3>
-                <p class="join__form--subtitle">To enter, you need to insert the address from which you sent ETH.</p>
-                    <input type="text">
-                <br/>
-                    <button class="btn btn--default join-btn">Enter</button>
-            </div>
+          <div class="join__form">
+            <h3 class="join__form-title">Entrance</h3>
+            <p class="join__form--subtitle">
+              To enter, you need to insert the address from which you sent ETH.
+            </p>
+            <input required class="join__input" type="text" />
+            <br />
+            <button class="btn btn--default join-btn" type="submit">
+              Enter
+            </button>
+          </div>
         </div>
-    </div>
-    <footer class="footer container">
+      </div>
+      <footer class="footer container join__footer">
         <ul class="footer__list">
-            <li class="footer__item">
-                <a href="#giveaway" class="footer__link">Giveaway</a>
-            </li>
-            <li class="footer__item">
-                <a href="#rules" class="footer__link">Rules</a>
-            </li>
-            <li class="footer__item">
-                <a href="#bonus" class="footer__link">Bonus</a>
-            </li>
-            <li class="footer__item">
-                <a href="#faq" class="footer__link">FAQ</a>
-            </li>
-            <li class="footer__item">
-                <a href="#transaction" class="footer__link">Transactions</a>
-            </li>
+          <li class="footer__item">
+            <a href="index.html#giveaway" class="footer__link">Giveaway</a>
+          </li>
+          <li class="footer__item">
+            <a href="index.html#rules" class="footer__link">Rules</a>
+          </li>
+          <li class="footer__item">
+            <a href="index.html#bonus" class="footer__link">Bonus</a>
+          </li>
+          <li class="footer__item">
+            <a href="index.html#faq" class="footer__link">FAQ</a>
+          </li>
+          <li class="footer__item">
+            <a href="index.htmlindex.html#transaction" class="footer__link"
+              >Transactions</a
+            >
+          </li>
         </ul>
-    </footer>
-</header>
+      </footer>
+    </header>
 
-<script src="js/app.js"></script>
-</body>
+    <script src="js/join.js"></script>
+  </body>
 </html>

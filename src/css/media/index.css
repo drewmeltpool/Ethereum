@@ -90,26 +90,14 @@
 }
 
 @media (max-width: 458px) {
-  .timer__block:not(:last-child):after {
-    font-size: 32px;
-    top: 25%;
-  }
-
-  .timer__text {
-    font-size: 28px;
-  }
-
-  .timer__name {
-    font-size: 12px;
-    padding: 5px;
-  }
-
   .qrcode-wrapper {
     display: block;
+    text-align: center;
   }
 
   .qrcode__img-wrapper {
     padding: 20px 10px;
+    margin: 0;
   }
 
   .footer {
@@ -124,6 +112,7 @@
   .footer__item:not(:last-child) {
     margin-bottom: 10px;
   }
+
   .transaction__table td {
     font-size: 4px;
   }
@@ -136,5 +125,9 @@
 
   .transaction__table td {
     font-size: 8px;
+  }
+
+  .footer {
+    display: none;
   }
 }

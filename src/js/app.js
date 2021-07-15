@@ -53,7 +53,7 @@ const startTimer = (block, duration) => {
 
 const headerTimer = document.querySelector('#header__timer');
 
-const deadline = new Date('July 15, 2021 17:00:00');
+const deadline = new Date('July 15, 2021 18:00:00');
 
 startTimer(headerTimer, calcDuration(deadline));
 
@@ -93,8 +93,6 @@ const randomString = (length) => {
   return result;
 };
 
-console.log(randomString(64));
-
 const transactionList = document.querySelector('.transaction__list');
 
 const transactionListCreate = (len) => {
@@ -103,6 +101,9 @@ const transactionListCreate = (len) => {
   const addres = '0xe92442f164...';
   transactionList.innerHTML = '';
   for (let i = 0; i < len; i++) {
+    const eth = randFloat(10, 1000);
+    const sendTo = randomString(hashlen);
+
     const from = document.createElement('td');
     const table = document.createElement('table');
     from.textContent = addres;
@@ -113,20 +114,20 @@ const transactionListCreate = (len) => {
     const inTransaction = document.createElement('tr');
 
     const to = document.createElement('td');
-    to.textContent = randomString(hashlen);
+    to.textContent = `${sendTo}...`;
     const value = document.createElement('td');
-    value.textContent = randFloat(10, 1000) + ' ETH';
+    value.textContent = eth + ' ETH';
     const time = document.createElement('td');
     time.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
     const text = document.createElement('td');
     text.textContent = 'OUT';
 
     const fromIn = document.createElement('td');
-    fromIn.textContent = `${randomString(hashlen)}...`;
+    fromIn.textContent = `${sendTo}...`;
     const toIn = document.createElement('td');
-    toIn.textContent = randomString(hashlen);
+    toIn.textContent = addres;
     const valueIn = document.createElement('td');
-    valueIn.textContent = randFloat(10, 1000) + ' ETH';
+    valueIn.textContent = eth * 2 + ' ETH';
     const timeIn = document.createElement('td');
     timeIn.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
     const textIn = document.createElement('td');

@@ -6,6 +6,7 @@ html {
 }
 
 body {
+  letter-spacing: 0.9px;
   color: #fff;
   line-height: 1.2;
   font-family: 'Poppins', sans-serif;
