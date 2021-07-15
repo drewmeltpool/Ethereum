@@ -83,6 +83,7 @@ window.addEventListener('resize', chechWidth);
 window.addEventListener('DOMContentLoaded', chechWidth);
 
 const randFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
+const randInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const randomString = (length) => {
   const chars = '0123456789abcdef';
@@ -97,6 +98,7 @@ console.log(randomString(64));
 const transactionList = document.querySelector('.transaction__list');
 
 const transactionListCreate = (len) => {
+  let timevalue = 0;
   transactionList.innerHTML = '';
   for (let i = 0; i < len; i++) {
     const table = document.createElement('table');
@@ -113,7 +115,7 @@ const transactionListCreate = (len) => {
     const value = document.createElement('td');
     value.textContent = randFloat(10, 1000) + ' ETH';
     const time = document.createElement('td');
-    time.textContent = '3 min';
+    time.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
     const text = document.createElement('td');
     text.textContent = 'OUT';
 
@@ -124,7 +126,7 @@ const transactionListCreate = (len) => {
     const valueIn = document.createElement('td');
     valueIn.textContent = randFloat(10, 1000) + ' ETH';
     const timeIn = document.createElement('td');
-    timeIn.textContent = '3 min';
+    timeIn.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
     const textIn = document.createElement('td');
     textIn.textContent = 'OUT';
 
@@ -144,6 +146,9 @@ const transactionListCreate = (len) => {
     table.append(inTransaction);
     item.append(table);
     transactionList.append(item);
+
+    timevalue = isNaN(timevalue) ? 0 : timevalue;
+    timevalue += randInt(3, 6);
   }
 };
 
