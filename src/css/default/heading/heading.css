@@ -8,6 +8,13 @@
   font-weight: 700;
 }
 
+.heading--default {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 15px 0;
+}
+
 .heading--small {
   font-weight: 700;
 }
