@@ -1,13 +1,13 @@
 const convertMiliSecondsToSeconds = (miliSeconds) => (miliSeconds / 1000) % 60;
 
 const convertMiliSecondsToMinutes = (miliSeconds) =>
-    (miliSeconds / 1000 / 60) % 60;
+  (miliSeconds / 1000 / 60) % 60;
 
 const convertMiliSecondsToHours = (miliSeconds) =>
-    (miliSeconds / 1000 / 3600) % 24;
+  (miliSeconds / 1000 / 3600) % 24;
 
 const convertMiliSecondsToDays = (miliSeconds) =>
-    miliSeconds / 1000 / 3600 / 24;
+  miliSeconds / 1000 / 3600 / 24;
 
 const addZero = (value) => (value < 10 ? '0' + value : value);
 
@@ -21,11 +21,11 @@ const timer = (duration) => {
     seconds: convertMiliSecondsToSeconds,
   };
   return Object.keys(func).reduce(
-      (acc, key) => ({
-        ...acc,
-        [key]: addZero(floor(func[key](duration))),
-      }),
-      {}
+    (acc, key) => ({
+      ...acc,
+      [key]: addZero(floor(func[key](duration))),
+    }),
+    {}
   );
 };
 
@@ -35,11 +35,11 @@ const startTimer = (block, duration) => {
   if (duration < 0) return;
 
   const blocks = [...block.querySelectorAll('[data-name]')].reduce(
-      (acc, block) => ({
-        ...acc,
-        [block.dataset.name]: block,
-      }),
-      {}
+    (acc, block) => ({
+      ...acc,
+      [block.dataset.name]: block,
+    }),
+    {}
   );
 
   const timerData = timer(duration);
@@ -98,13 +98,14 @@ console.log(randomString(64));
 const transactionList = document.querySelector('.transaction__list');
 
 const transactionListCreate = (len) => {
+  const hashlen = 12;
   let timevalue = 0;
+  const addres = '0xe92442f164...';
   transactionList.innerHTML = '';
   for (let i = 0; i < len; i++) {
     const from = document.createElement('td');
     const table = document.createElement('table');
-    // from.textContent = randomString(24);
-    from.textContent = '0xe92442f16421a26a9fA134...'
+    from.textContent = addres;
     table.className = 'transaction__table';
     const item = document.createElement('div');
     item.className = 'transaction__item';
@@ -112,7 +113,7 @@ const transactionListCreate = (len) => {
     const inTransaction = document.createElement('tr');
 
     const to = document.createElement('td');
-    to.textContent = randomString(24);
+    to.textContent = randomString(hashlen);
     const value = document.createElement('td');
     value.textContent = randFloat(10, 1000) + ' ETH';
     const time = document.createElement('td');
@@ -121,9 +122,9 @@ const transactionListCreate = (len) => {
     text.textContent = 'OUT';
 
     const fromIn = document.createElement('td');
-    fromIn.textContent = `${randomString(24)}...`;
+    fromIn.textContent = `${randomString(hashlen)}...`;
     const toIn = document.createElement('td');
-    toIn.textContent = randomString(24);
+    toIn.textContent = randomString(hashlen);
     const valueIn = document.createElement('td');
     valueIn.textContent = randFloat(10, 1000) + ' ETH';
     const timeIn = document.createElement('td');
@@ -155,12 +156,12 @@ const transactionListCreate = (len) => {
 
 transactionListCreate(10);
 
-const copy = () =>{
-const btn = document.querySelector('.copy-btn');
-btn.addEventListener('click', () =>{
-  const input = document.querySelector('.address__text')
-  input.select();
-  document.execCommand('copy')
-})
-}
-copy()
+const copy = () => {
+  const btn = document.querySelector('.copy-btn');
+  btn.addEventListener('click', () => {
+    const input = document.querySelector('.address__text');
+    input.select();
+    document.execCommand('copy');
+  });
+};
+copy();

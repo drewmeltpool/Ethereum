@@ -124,4 +124,17 @@
   .footer__item:not(:last-child) {
     margin-bottom: 10px;
   }
+  .transaction__table td {
+    font-size: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transaction__item {
+    padding: 5px 15px;
+  }
+
+  .transaction__table td {
+    font-size: 8px;
+  }
 }
