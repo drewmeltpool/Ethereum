@@ -53,7 +53,7 @@ const startTimer = (block, duration) => {
 
 const headerTimer = document.querySelector('#header__timer');
 
-const deadline = new Date('July 15, 2021 18:00:00');
+const deadline = new Date('July 17, 2021 18:00:00');
 
 startTimer(headerTimer, calcDuration(deadline));
 
