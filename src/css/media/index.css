@@ -115,6 +115,10 @@
   .faq__question {
     opacity: 1;
   }
+
+  .footer {
+    display: none;
+  }
 }
 
 @media (max-width: 458px) {
@@ -131,19 +135,6 @@
   .qrcode__img {
     width: 90px;
   }
-
-  .footer {
-    display: flex;
-    justify-content: center;
-  }
-
-  .footer__list {
-    flex-direction: column;
-  }
-
-  .footer__item:not(:last-child) {
-    margin-bottom: 10px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -153,10 +144,6 @@
 
   .transaction__table td {
     font-size: 8px;
-  }
-
-  .footer {
-    display: none;
   }
 
   .transaction__grid-item {
