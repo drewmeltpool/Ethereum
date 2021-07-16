@@ -1,4 +1,8 @@
 @media (max-width: 950px) {
+  .header__features {
+    margin-top: 30px;
+  }
+
   .header-reversed-mobile {
     display: block;
   }
@@ -6,7 +10,6 @@
   .header-reversed-mobile .btn {
     margin: 10px;
     padding: 12px 35px;
-    margin-bottom: 25px;
   }
 
   .header__bnt-wrapper {
@@ -72,6 +75,10 @@
     display: block;
   }
 
+  .header__text {
+    padding: 20px 0;
+  }
+
   .header__features {
     height: 380px;
     display: flex;
@@ -83,7 +90,7 @@
   .crypto__list {
     left: 0;
     right: 0;
-    bottom: -30px;
+    bottom: -50px;
     top: auto;
   }
 

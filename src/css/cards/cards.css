@@ -74,11 +74,14 @@
   border-radius: 30px;
 }
 .example_description {
-  margin: 20px auto;
+  margin: 10px;
 }
 
 .card__example {
   font-size: 16px;
+}
+
+.card__example:not(:last-child) {
   margin-bottom: 24px;
 }
 

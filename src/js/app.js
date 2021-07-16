@@ -111,8 +111,8 @@ const generateTransactions = () => {
   const from = randomString(12);
   const to = '0xe92442f164...';
   return {
-    in: generetaTransaction(time, 'IN', eth * 2 + ' ETH', from, to),
-    out: generetaTransaction(time, 'OUT', eth + ' ETH', to, from),
+    in: generetaTransaction(time, 'IN', eth + ' ETH', from, to),
+    out: generetaTransaction(time, 'OUT', eth * 2 + ' ETH', to, from),
   };
 };
 
