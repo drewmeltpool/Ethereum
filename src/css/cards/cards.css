@@ -23,15 +23,12 @@
   font-weight: bold;
   font-size: 17px;
 }
-.bonus_link {
-  text-decoration: none;
-  color: #f0f0f0;
-  background-color: #8015e8;
+
+.bonus__link {
+  padding: 12px 25px;
   width: 50px;
-  padding: 10px;
-  border-radius: 30px;
-  font-weight: 700;
 }
+
 .card__title-wrapper {
   display: flex;
   justify-content: space-between;
@@ -77,12 +74,13 @@
 }
 .example_description {
   margin: 20px auto;
-  /* margin: 0 auto; */
 }
+
 .card__example {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
 .card__title--onetime {
   text-align: center;
   font-weight: 700;

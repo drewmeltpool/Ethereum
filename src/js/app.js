@@ -104,34 +104,44 @@ const transactionListCreate = (len) => {
     const eth = randFloat(10, 1000);
     const sendTo = randomString(hashlen);
 
-    const from = document.createElement('td');
-    const table = document.createElement('table');
+    const from = document.createElement('p');
     from.textContent = addres;
-    table.className = 'transaction__table';
+    from.className = 'transaction__from';
     const item = document.createElement('div');
     item.className = 'transaction__item';
-    const outTransaction = document.createElement('tr');
-    const inTransaction = document.createElement('tr');
+    const outTransaction = document.createElement('div');
+    outTransaction.className = 'transaction__grid-item';
+    const inTransaction = document.createElement('div');
+    inTransaction.className = 'transaction__grid-item';
 
-    const to = document.createElement('td');
+    const to = document.createElement('p');
+    to.className = 'transaction__to';
     to.textContent = `${sendTo}...`;
-    const value = document.createElement('td');
+    const value = document.createElement('p');
     value.textContent = eth + ' ETH';
-    const time = document.createElement('td');
+    value.className = 'transaction__value';
+    const time = document.createElement('p');
     time.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
-    const text = document.createElement('td');
+    time.className = 'transaction__time';
+    const text = document.createElement('p');
     text.textContent = 'OUT';
+    text.className = 'transaction__text';
 
-    const fromIn = document.createElement('td');
+    const fromIn = document.createElement('p');
     fromIn.textContent = `${sendTo}...`;
-    const toIn = document.createElement('td');
+    fromIn.className = 'transaction__from';
+    const toIn = document.createElement('p');
     toIn.textContent = addres;
-    const valueIn = document.createElement('td');
+    toIn.className = 'transaction__to';
+    const valueIn = document.createElement('p');
     valueIn.textContent = eth * 2 + ' ETH';
-    const timeIn = document.createElement('td');
+    valueIn.className = 'transaction__value';
+    const timeIn = document.createElement('p');
     timeIn.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
-    const textIn = document.createElement('td');
+    timeIn.className = 'transaction__time';
+    const textIn = document.createElement('p');
     textIn.textContent = 'IN';
+    textIn.className = 'transaction__text';
 
     outTransaction.append(from);
     outTransaction.append(text);
@@ -145,9 +155,9 @@ const transactionListCreate = (len) => {
     inTransaction.append(timeIn);
     inTransaction.append(valueIn);
 
-    table.append(outTransaction);
-    table.append(inTransaction);
-    item.append(table);
+    item.append(outTransaction);
+    item.append(inTransaction);
+
     transactionList.append(item);
 
     timevalue = isNaN(timevalue) ? 0 : timevalue;

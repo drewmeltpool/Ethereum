@@ -1,4 +1,5 @@
 .speaker__item {
+  text-align: center;
   z-index: 2;
   position: absolute;
   right: 0;

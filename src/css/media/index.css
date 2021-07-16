@@ -59,6 +59,7 @@
   }
 
   .header__features {
+    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,11 +67,38 @@
     flex-wrap: wrap;
   }
 
+  .crypto__list {
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    top: auto;
+  }
+
+  .capability__list {
+    top: 5px;
+    left: 0;
+  }
+
+  .speaker__item {
+    top: 2px;
+    right: 0;
+    left: 40%;
+  }
+
   .crypto__list,
   .capability__list,
   .speaker__item {
-    position: static;
-    margin: 20px;
+    position: absolute;
+  }
+
+  .crypto__text {
+    margin-left: auto;
+  }
+
+  .capability__item {
+    font-size: 14px;
+    padding: 8px 0;
+    font-weight: 500;
   }
 
   .faq__item:hover .faq__answer,
@@ -100,6 +128,10 @@
     margin: 0;
   }
 
+  .qrcode__img {
+    width: 90px;
+  }
+
   .footer {
     display: flex;
     justify-content: center;
@@ -111,10 +143,6 @@
 
   .footer__item:not(:last-child) {
     margin-bottom: 10px;
-  }
-
-  .transaction__table td {
-    font-size: 4px;
   }
 }
 
@@ -129,5 +157,34 @@
 
   .footer {
     display: none;
+  }
+
+  .transaction__grid-item {
+    display: grid;
+    font-size: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'from text to'
+      'time text value';
+  }
+
+  .transaction__from {
+    grid-area: from;
+  }
+
+  .transaction__to {
+    grid-area: to;
+  }
+
+  .transaction__time {
+    grid-area: time;
+  }
+
+  .transaction__text {
+    grid-area: text;
+  }
+
+  .transaction__value {
+    grid-area: value;
   }
 }
