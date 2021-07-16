@@ -22,6 +22,7 @@
 .card__title {
   font-weight: bold;
   font-size: 17px;
+  text-align: center;
 }
 
 .bonus__link {
@@ -78,7 +79,7 @@
 
 .card__example {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
 
 .card__title--onetime {

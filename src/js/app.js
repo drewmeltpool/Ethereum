@@ -95,20 +95,37 @@ const randomString = (length) => {
 
 const transactionList = document.querySelector('.transaction__list');
 
-const transactionListCreate = (len) => {
-  const hashlen = 12;
-  let timevalue = 0;
-  const addres = '0xe92442f164...';
-  transactionList.innerHTML = '';
-  for (let i = 0; i < len; i++) {
-    const eth = randFloat(10, 1000);
-    const sendTo = randomString(hashlen);
+const generetaTransaction = (time, text, value, from, to) => ({
+  text,
+  value,
+  time,
+  from,
+  to,
+});
 
+let timeValue = 0;
+const generateTransactions = () => {
+  const time = timeValue ? timeValue + ' min' : 'right now';
+  timeValue += randInt(1, 5);
+  const eth = randFloat(10, 225);
+  const from = randomString(12);
+  const to = '0xe92442f164...';
+  return {
+    in: generetaTransaction(time, 'IN', eth * 2 + ' ETH', from, to),
+    out: generetaTransaction(time, 'OUT', eth + ' ETH', to, from),
+  };
+};
+
+const transactionListCreate = (arr) => {
+  transactionList.innerHTML = '';
+
+  for (const transaction of arr) {
     const from = document.createElement('p');
-    from.textContent = addres;
+    from.textContent = transaction.out.from;
     from.className = 'transaction__from';
     const item = document.createElement('div');
     item.className = 'transaction__item';
+
     const outTransaction = document.createElement('div');
     outTransaction.className = 'transaction__grid-item';
     const inTransaction = document.createElement('div');
@@ -116,31 +133,31 @@ const transactionListCreate = (len) => {
 
     const to = document.createElement('p');
     to.className = 'transaction__to';
-    to.textContent = `${sendTo}...`;
+    to.textContent = transaction.out.to;
     const value = document.createElement('p');
-    value.textContent = eth + ' ETH';
+    value.textContent = transaction.out.value;
     value.className = 'transaction__value';
     const time = document.createElement('p');
-    time.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
+    time.textContent = transaction.out.time;
     time.className = 'transaction__time';
     const text = document.createElement('p');
-    text.textContent = 'OUT';
+    text.textContent = transaction.out.text;
     text.className = 'transaction__text';
 
     const fromIn = document.createElement('p');
-    fromIn.textContent = `${sendTo}...`;
+    fromIn.textContent = transaction.in.from;
     fromIn.className = 'transaction__from';
     const toIn = document.createElement('p');
-    toIn.textContent = addres;
+    toIn.textContent = transaction.in.to;
     toIn.className = 'transaction__to';
     const valueIn = document.createElement('p');
-    valueIn.textContent = eth * 2 + ' ETH';
+    valueIn.textContent = transaction.in.value;
     valueIn.className = 'transaction__value';
     const timeIn = document.createElement('p');
-    timeIn.textContent = timevalue === 0 ? 'right now' : timevalue + ' min';
+    timeIn.textContent = transaction.in.time;
     timeIn.className = 'transaction__time';
     const textIn = document.createElement('p');
-    textIn.textContent = 'IN';
+    textIn.textContent = transaction.in.text;
     textIn.className = 'transaction__text';
 
     outTransaction.append(from);
@@ -159,20 +176,42 @@ const transactionListCreate = (len) => {
     item.append(inTransaction);
 
     transactionList.append(item);
-
-    timevalue = isNaN(timevalue) ? 0 : timevalue;
-    timevalue += randInt(3, 6);
   }
 };
+let tra = new Array(10).fill(null).map(() => {
+  return generateTransactions();
+});
 
-transactionListCreate(10);
+const getNumbers = (string) =>
+  Number([...string].filter((w) => !isNaN(w)).join(''));
 
-const copy = () => {
-  const btn = document.querySelector('.copy-btn');
-  btn.addEventListener('click', () => {
-    const input = document.querySelector('.address__text');
-    input.select();
-    document.execCommand('copy');
+setInterval(() => {
+  tra.unshift(generateTransactions());
+
+  const timeArr = tra
+    .map((item) => ({
+      value: getNumbers(item.in.time),
+      text: item.in.time,
+    }))
+    .sort((a, b) => a.value - b.value);
+
+  tra.forEach((item, i) => {
+    item.in.time = timeArr[i].text;
+    item.out.time = timeArr[i].text;
   });
-};
-copy();
+
+  if (tra.length > 12) {
+    tra.length = 12;
+  }
+
+  transactionListCreate(tra);
+}, 60000);
+
+transactionListCreate(tra);
+
+const btn = document.querySelector('.copy-btn');
+btn.addEventListener('click', () => {
+  const input = document.querySelector('.address__text');
+  input.select();
+  document.execCommand('copy');
+});

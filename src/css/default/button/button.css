@@ -11,6 +11,11 @@
   display: inline-block;
 }
 
+.btn:hover {
+  background-color: #b784ed;
+  transition: 0.5s ease;
+}
+
 .btn--default {
   padding: 7px 45px;
   border-radius: 50px;

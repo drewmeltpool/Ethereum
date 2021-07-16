@@ -1,4 +1,18 @@
 @media (max-width: 950px) {
+  .header-reversed-mobile {
+    display: block;
+  }
+
+  .header-reversed-mobile .btn {
+    margin: 10px;
+    padding: 12px 35px;
+    margin-bottom: 25px;
+  }
+
+  .header__bnt-wrapper {
+    display: none;
+  }
+
   .card:not(:nth-child(2)) {
     margin: 0;
   }
@@ -63,18 +77,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
     flex-wrap: wrap;
   }
 
   .crypto__list {
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: -30px;
     top: auto;
   }
 
   .capability__list {
+    border: none;
     top: 5px;
     left: 0;
   }
@@ -96,9 +110,9 @@
   }
 
   .capability__item {
-    font-size: 14px;
+    font-size: 12px;
     padding: 8px 0;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .faq__item:hover .faq__answer,
