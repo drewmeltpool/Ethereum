@@ -53,7 +53,7 @@ const startTimer = (block, duration) => {
 
 const headerTimer = document.querySelector('#header__timer');
 
-const deadline = new Date('July 17, 2021 18:00:00');
+const deadline = new Date('July 20, 2021 18:00:00');
 
 startTimer(headerTimer, calcDuration(deadline));
 
@@ -63,6 +63,7 @@ const html = document.querySelector('html');
 
 const chechWidth = () => {
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
   if (width < 950) {
     burger.onclick = () => {
       navbar.classList.toggle('navbar__list--active');
@@ -74,8 +75,9 @@ const chechWidth = () => {
       html.classList.toggle('open-menu');
     };
   } else {
-    burger.onclick = () => {};
-    navbar.onclick = () => {};
+    html.classList.remove('open-menu');
+    burger.onclick = null;
+    navbar.onclick = null;
   }
 };
 
@@ -108,7 +110,7 @@ const generateTransactions = () => {
   const time = timeValue ? timeValue + ' min' : 'right now';
   timeValue += randInt(1, 5);
   const eth = randFloat(10, 225);
-  const from = randomString(12);
+  const from = `0x${randomString(10)}...`;
   const to = '0xe92442f164...';
   return {
     in: generetaTransaction(time, 'IN', eth + ' ETH', from, to),
@@ -178,6 +180,7 @@ const transactionListCreate = (arr) => {
     transactionList.append(item);
   }
 };
+
 let tra = new Array(10).fill(null).map(() => {
   return generateTransactions();
 });
@@ -185,9 +188,8 @@ let tra = new Array(10).fill(null).map(() => {
 const getNumbers = (string) =>
   Number([...string].filter((w) => !isNaN(w)).join(''));
 
-setInterval(() => {
+const updateTransactionsList = () => {
   tra.unshift(generateTransactions());
-
   const timeArr = tra
     .map((item) => ({
       value: getNumbers(item.in.time),
@@ -201,11 +203,18 @@ setInterval(() => {
   });
 
   if (tra.length > 12) {
-    tra.length = 12;
+    tra = tra.slice(0, 12);
   }
 
   transactionListCreate(tra);
-}, 60000);
+};
+
+setTimeout(() => {
+  updateTransactionsList();
+  setInterval(() => {
+    updateTransactionsList();
+  }, 60000);
+}, 1000);
 
 transactionListCreate(tra);
 

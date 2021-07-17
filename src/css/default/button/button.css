@@ -11,7 +11,8 @@
   display: inline-block;
 }
 
-.btn:hover {
+.btn--default:hover,
+.btn--outline:hover {
   background-color: #b784ed;
   transition: 0.5s ease;
 }

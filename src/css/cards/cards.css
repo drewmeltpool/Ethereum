@@ -22,7 +22,7 @@
 .card__title {
   font-weight: bold;
   font-size: 17px;
-  text-align: center;
+  padding-bottom: 10px;
 }
 
 .bonus__link {
@@ -65,6 +65,7 @@
 .bonuses {
   border: 1px solid rgba(84, 97, 125, 0.9);
   grid-area: bonuses;
+  text-align: center;
 }
 
 .onetime {

@@ -6,4 +6,6 @@
 
 ## Full Layout
 
-![alt text](screenshots/layout.png)
+![layout](screenshots/layout.png)
+
+<!-- <img src="screenshots/layout.png" alt="layout" width="100%"/> -->
